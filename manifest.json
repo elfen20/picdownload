@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "PicDownload",
+  "version": "1.0",
+
+  "applications": {
+    "gecko": {
+      "id": "picdownload@elfen20.de"
+    }
+  },
+
+  "description": "Download a picture",
+
+  "icons": {
+    "48": "icons/pic-48.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+        "19": "icons/pic-19.png",
+        "38": "icons/pic-38.png"
+      },
+    "default_title": "Download the pic!"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["picdownload.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
