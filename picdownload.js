@@ -5,8 +5,10 @@ var pDownload = {
         if (e.key == '<') {
             var el = document.elementFromPoint(pDownload.mouseX, pDownload.mouseY);
             if (el) {
-                console.log(el);
-                if (el.tagName == "IMG") console.log("Image!");
+                // console.log(el);
+                if (el.tagName == "IMG") {
+                    browser.runtime.sendMessage({"img": el.src});
+                }
             }
         }
     },
